@@ -1,16 +1,16 @@
 package hangman;
 
-import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameTest extends TestCase {
+public class GameTest {
 
     public static final int MAX_FAILED_ATTEMPTS = 7;
 
+    @Test
     public void testMakeAttempt(){
         Game game = new Game("Test");
         List<Character> attemptComparison = new ArrayList<>();
@@ -28,6 +28,7 @@ public class GameTest extends TestCase {
         Assert.assertEquals(attemptComparison, attempts);
     }
 
+    @Test
     public void testGetSecretWord(){
         Game game = new Game("Test");
         String secretWord = game.getSecretWord();
